@@ -1,0 +1,537 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Script file="touchy_settings.lua" />
+   
+   <Frame name="TouchySettingsFrame" parent="UIParent" toplevel="true" enableMouse="true" hidden="true">
+      <Size>
+         <AbsDimension x="640" y="480" />
+      </Size>
+      <Anchors>
+         <Anchor point="CENTER" />
+      </Anchors>
+      <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+         <BackgroundInsets>
+            <AbsInset left="11" right="12" top="12" bottom="11"/>
+         </BackgroundInsets>
+         <TileSize>
+            <AbsValue val="32"/>
+         </TileSize>
+         <EdgeSize>
+            <AbsValue val="32"/>
+         </EdgeSize>
+      </Backdrop>
+      <Layers>
+         <Layer level="ARTWORK">
+            <Texture name="$parent_FrameHeader" file="Interface\DialogFrame\UI-DialogBox-Header">
+               
+               <Anchors>
+                  <Anchor point="TOP">
+                     <Offset>
+                        <AbsDimension x="0" y="12"/>
+                     </Offset>
+                  </Anchor>
+               </Anchors>
+            </Texture>
+         </Layer>
+         <Layer level="OVERLAY">
+            <FontString name="$parent_Title" parentKey="title" inherits="GameFontNormal" text="All Settings">
+               
+               <Anchors>
+                  <Anchor point="CENTER" relativeTo="$parent_FrameHeader">
+                     <Offset>
+                        <AbsDimension x="3" y="12"/>
+                     </Offset>
+                  </Anchor>
+               </Anchors>
+            </FontString>
+         </Layer>
+      </Layers>
+      <Frames>
+         
+         <CheckButton name="$parent_SynchronizeBindings" inherits="OptionsCheckButtonTemplate" text="Synchronize key bindings">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="20" y="-20"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Synchronize Bindings" />
+               <Attribute name="tooltip_description" type="String" value="Make key bindings same for every computer|nyou use by storing them with Blizzard." />
+               <Attribute name="cvar_name" type="string" value="synchronizeBindings" />
+               <Attribute name="cvar_checked" type="string" value="1" />
+               <Attribute name="cvar_unchecked" type="string" value="0" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Checkbutton_OnLoad(self);</OnLoad>
+               <OnClick>TOUCHYSETTINGS.Checkutton_OnClick(self);</OnClick>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </CheckButton>
+      
+         <CheckButton name="$parent_SynchronizeConfigCheck" inherits="OptionsCheckButtonTemplate" text="Synchronize game settings">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="20" y="-40"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Synchronize Config" />
+               <Attribute name="tooltip_description" type="String" value="Make game settings the same on every computer|nyou use by storing them with blizzard.|nE.g. Raid frame and quest tracking settings." />
+               <Attribute name="cvar_name" type="string" value="synchronizeConfig" />
+               <Attribute name="cvar_checked" type="string" value="1" />
+               <Attribute name="cvar_unchecked" type="string" value="0" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Checkbutton_OnLoad(self);</OnLoad>
+               <OnClick>TOUCHYSETTINGS.Checkutton_OnClick(self);</OnClick>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </CheckButton>
+
+         <CheckButton name="$parent_SynchronizeMacrosCheck" inherits="OptionsCheckButtonTemplate" text="Synchronize macros">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="20" y="-60"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Synchronize Macros" />
+               <Attribute name="tooltip_description" type="String" value="Make macros the same on every computer|nyou use by storing them with Blizzard." />
+               <Attribute name="cvar_name" type="string" value="synchronizeMacros" />
+               <Attribute name="cvar_checked" type="string" value="1" />
+               <Attribute name="cvar_unchecked" type="string" value="0" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Checkbutton_OnLoad(self);</OnLoad>
+               <OnClick>TOUCHYSETTINGS.Checkutton_OnClick(self);</OnClick>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </CheckButton>
+        
+         <CheckButton name="$parent_FFXGlowCheck" inherits="OptionsCheckButtonTemplate" text="Full screen glow effect">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="20" y="-120"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="FFXGlow" />
+               <Attribute name="tooltip_description" type="String" value="Enable the full-screen glow effect.|nMake the world 'brighter', also under-water wave effects." />
+               <Attribute name="cvar_name" type="string" value="ffxglow" />
+               <Attribute name="cvar_checked" type="string" value="1" />
+               <Attribute name="cvar_unchecked" type="string" value="0" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Checkbutton_OnLoad(self);</OnLoad>
+               <OnClick>TOUCHYSETTINGS.Checkutton_OnClick(self);</OnClick>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </CheckButton>
+         
+         <Button name="$parent_ResetActionBarsButton" inherits="OptionsButtonTemplate" text="Reset Action Bars">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="20" y="-90"/>
+               </Anchor> 
+            </Anchors>
+            <Size>
+               <AbsDimension x="164" y="24" />
+            </Size>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Reset Action Bars" />
+               <Attribute name="tooltip_description" type="String" value="Remove every item from your action bars." />
+            </Attributes>
+            <Scripts>
+               <OnClick>TOUCHYSETTINGS.ResetActionBarsButton_Click();</OnClick>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Button>
+
+         <Button name="$parent_ResetKeyBindingsButton" inherits="OptionsButtonTemplate" text="Reset Key Bindings">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="190" y="-90"/>
+               </Anchor> 
+            </Anchors>
+            <Size>
+               <AbsDimension x="164" y="24" />
+            </Size>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Reset Key Bindings" />
+               <Attribute name="tooltip_description" type="String" value="Remove every key binding; start from a blank slate." />
+            </Attributes>
+            <Scripts>
+               <OnClick>TOUCHYSETTINGS.ResetKeyBindingsButton_Click();</OnClick>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Button>
+
+         <Button name="$parent_ResetMacrosButton" inherits="OptionsButtonTemplate" text="Reset Macros">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="360" y="-90"/>
+               </Anchor> 
+            </Anchors>
+            <Size>
+               <AbsDimension x="164" y="24" />
+            </Size>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Reset Macros" />
+               <Attribute name="tooltip_description" type="String" value="Delete every macro that you've created." />
+            </Attributes>
+            <Scripts>
+               <OnClick>TOUCHYSETTINGS.ResetMacrosButton_Click();</OnClick>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Button>
+ 
+         <Button name="$parent_ButtonClose" inherits="OptionsButtonTemplate" text="Reset Action Bars">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="20" y="-90"/>
+               </Anchor> 
+            </Anchors>
+            <Size>
+               <AbsDimension x="164" y="24" />
+            </Size>
+            <Scripts>
+               <OnClick>TOUCHYSETTINGS.ResetActionBarsButton_Click();</OnClick>
+            </Scripts>
+         </Button>
+  
+         <Button name="$parent_ScreenshotFormatMenu" inherits="UIDropDownMenuTemplate" text="Screenshot Format">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="5" y="-165"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Screenshot Format" />
+               <Attribute name="tooltip_description" type="String" value="Changes the file format of screenshots.|nJPEG is smallest file size and TGA is best quality." />
+               <Attribute name="cvar_name" type="string" value="screenshotFormat" />
+               <Attribute name="menu_item_count" type="number" value="2" />
+               <Attribute name="menu_title_1" type="string" value="JPEG" />
+               <Attribute name="menu_value_1" type="string" value="jpeg" />
+               <Attribute name="menu_title_2" type="string" value="TGA" />
+               <Attribute name="menu_value_2" type="string" value="tga" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Menubutton_OnLoad(self);</OnLoad>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Button>
+         
+         <Slider name="$parent_screenshotQualitySlider" inherits="OptionsSliderTemplate" minvalue="1" maxvalue="10" valuestep="1" text="Screenshot Quality">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="220" y="-165"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Screenshot Quality" />
+               <Attribute name="tooltip_description" type="String" value="The quality of screenshots when JPEG format is used. No effect on TGA or PNG format." />
+               <Attribute name="cvar_name" type="string" value="screenshotQuality" />
+               <Attribute name="label" type="string" value="JPEG Quality" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Slider_OnLoad(self);</OnLoad>
+               <OnValueChanged>TOUCHYSETTINGS.Slider_OnValueChanged(self);</OnValueChanged>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Slider>
+  
+         <Button name="$parent_ShadowTextureSizeMenu" inherits="UIDropDownMenuTemplate" text="Shadow Texture Size">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="5" y="-208"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Shadow Texture Size" />
+               <Attribute name="tooltip_description" type="String" value="Alter the size of shadow textures.|n2048 is sharper and more accurate than 1024." />
+               <Attribute name="cvar_name" type="string" value="ShadowTextureSize" />
+               <Attribute name="menu_item_count" type="number" value="2" />
+               <Attribute name="menu_title_1" type="string" value="1024" />
+               <Attribute name="menu_value_1" type="string" value="1024" />
+               <Attribute name="menu_title_2" type="string" value="2048" />
+               <Attribute name="menu_value_2" type="string" value="2048" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Menubutton_OnLoad(self);</OnLoad>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Button>
+  
+         <!--
+           <Button name="$parent_ColorBlindShaderMenu" inherits="UIDropDownMenuTemplate" text="Colour Blind Mode">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="5" y="-225"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Colour Blind Shader" />
+               <Attribute name="tooltip_description" type="String" value="Use Shaders to adjust colours and make the game easier|nto see for people with colour blindness." />
+               <Attribute name="cvar_name" type="string" value="ColorBlindShader" />
+               <Attribute name="menu_item_count" type="number" value="9" />
+               <Attribute name="menu_title_1" type="string" value="None" />
+               <Attribute name="menu_value_1" type="string" value="" />
+               <Attribute name="menu_title_2" type="string" value="Protanopia" />
+               <Attribute name="menu_value_2" type="string" value="1" />
+               <Attribute name="menu_title_3" type="string" value="Protanomaly" />
+               <Attribute name="menu_value_3" type="string" value="2" />
+               <Attribute name="menu_title_4" type="string" value="Deuteranopia" />
+               <Attribute name="menu_value_4" type="string" value="3" />
+               <Attribute name="menu_title_5" type="string" value="Deuteranomaly" />
+               <Attribute name="menu_value_5" type="string" value="4" />
+               <Attribute name="menu_title_6" type="string" value="Tritanopia" />
+               <Attribute name="menu_value_6" type="string" value="5" />
+               <Attribute name="menu_title_7" type="string" value="Tritanomaly" />
+               <Attribute name="menu_value_7" type="string" value="6" />
+               <Attribute name="menu_title_8" type="string" value="Achromatopsia" />
+               <Attribute name="menu_value_8" type="string" value="7" />
+               <Attribute name="menu_title_9" type="string" value="Achromatomaly" />
+               <Attribute name="menu_value_9" type="string" value="8" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Menubutton_OnLoad(self);</OnLoad>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Button>
+       -->
+         
+         <Button name="$parent_ViolenceLevelMenu" inherits="UIDropDownMenuTemplate" text="Violence Level">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="5" y="-250"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Violence Level" />
+               <Attribute name="tooltip_description" type="String" value="Controls the color and amount of blood|nfor abilities like rend.|nValues 0-5 are valid. Only 0-2 make a difference" />
+               <Attribute name="cvar_name" type="string" value="ViolenceLevel" />
+               <Attribute name="menu_item_count" type="number" value="6" />
+               <Attribute name="menu_title_1" type="string" value="Green Blood" />
+               <Attribute name="menu_value_1" type="string" value="0" />
+               <Attribute name="menu_title_2" type="string" value="Black Blood" />
+               <Attribute name="menu_value_2" type="string" value="1" />
+               <Attribute name="menu_title_3" type="string" value="Red Blood" />
+               <Attribute name="menu_value_3" type="string" value="2" />
+               <Attribute name="menu_title_4" type="string" value="More Blood" />
+               <Attribute name="menu_value_4" type="string" value="3" />
+               <Attribute name="menu_title_5" type="string" value="Most Blood" />
+               <Attribute name="menu_value_5" type="string" value="4" />
+               <Attribute name="menu_title_6" type="string" value="Mortal Kombat" />
+               <Attribute name="menu_value_6" type="string" value="5" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Menubutton_OnLoad(self);</OnLoad>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Button>
+
+         <Slider name="$parent_GroundEffectDistSlider" inherits="OptionsSliderTemplate" minvalue="1" maxvalue="600" valuestep="1" text="Ground Effect Distance">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="20" y="-300"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Ground Effect Distance" />
+               <Attribute name="tooltip_description" type="String" value="How far away from your character that|nground clutter like grass will be shown." />
+               <Attribute name="cvar_name" type="string" value="groundEffectDist" />
+               <Attribute name="label" type="string" value="Grass distance" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Slider_OnLoad(self);</OnLoad>
+               <OnValueChanged>TOUCHYSETTINGS.Slider_OnValueChanged(self);</OnValueChanged>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Slider>
+         
+         <Slider name="$parent_TerrainLodDistSlider" inherits="OptionsSliderTemplate" minvalue="200" maxvalue="1300" valuestep="1" text="Terrain LOD Distance">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="220" y="-300"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Terrain LOD Distance" />
+               <Attribute name="tooltip_description" type="String" value="How far away to use low-polygon terrain models.|nNormally 1/2 your view distance, bigger is better." />
+               <Attribute name="cvar_name" type="string" value="terrainLODDist" />
+               <Attribute name="label" type="string" value="Land LOD distance" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Slider_OnLoad(self);</OnLoad>
+               <OnValueChanged>TOUCHYSETTINGS.Slider_OnValueChanged(self);</OnValueChanged>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Slider>
+ 
+         <Slider name="$parent_CameraDistanceMaxSlider" inherits="OptionsSliderTemplate" minvalue="1" maxvalue="50" valuestep="1" text="Maximum Camera Distance">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="220" y="-350"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Maximum Camera Distance" />
+               <Attribute name="tooltip_description" type="String" value="How far out the camera should be allowed to zoom." />
+               <Attribute name="cvar_name" type="string" value="CameraDistanceMax" />
+               <Attribute name="label" type="string" value="Camera distance" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Slider_OnLoad(self);</OnLoad>
+               <OnValueChanged>TOUCHYSETTINGS.Slider_OnValueChanged(self);</OnValueChanged>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Slider>
+         
+         <Slider name="$parent_GroundEffectDensitySlider" inherits="OptionsSliderTemplate" minvalue="1" maxvalue="256" valuestep="1" text="Ground Effect Density">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="20" y="-350"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Ground Effect Density" />
+               <Attribute name="tooltip_description" type="String" value="How thick and tense the ground clutter|nlike grass will be." />
+               <Attribute name="cvar_name" type="string" value="groundEffectDensity" />
+               <Attribute name="label" type="string" value="Grass density" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Slider_OnLoad(self);</OnLoad>
+               <OnValueChanged>TOUCHYSETTINGS.Slider_OnValueChanged(self);</OnValueChanged>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Slider>
+ 
+         <Slider name="$parent_SpellEffectLevelSlider" inherits="OptionsSliderTemplate" minvalue="1" maxvalue="1000" valuestep="1" text="Spell Effect Level">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="20" y="-400"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Spell Effect Level" minvalue="100" maxvalue="1600" />
+               <Attribute name="tooltip_description" type="String" value="The intensity of multi-element spell effects.|nE.g. Blizzard, Rain of Fire, and Death n' Decay." />
+               <Attribute name="label" type="string" value="AOE Intensity" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>
+               TOUCHYSETTINGS.Slider_InitLabels(self);
+               </OnLoad>
+               <OnValueChanged>TOUCHYSETTINGS.Slider_SpellEffectValueChanged(self);</OnValueChanged>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Slider>
+         
+          <Slider name="$parent_FarclipSlider" inherits="OptionsSliderTemplate" minvalue="100" maxvalue="1600" valuestep="1" text="Far Clip Distance">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="220" y="-400"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="Far Clip" />
+               <Attribute name="tooltip_description" type="String" value="Maximum distance you can see.|n Setting this above 1300 is supposed to work but I can't prove it." />
+               <Attribute name="cvar_name" type="string" value="farclip" />
+               <Attribute name="label" type="string" value="Render distance" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Slider_OnLoad(self);</OnLoad>
+               <OnValueChanged>TOUCHYSETTINGS.Slider_OnValueChanged(self);</OnValueChanged>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Slider>
+         
+         <Slider name="$parent_SkyCloudLodSlider" inherits="OptionsSliderTemplate" minvalue="0" maxvalue="2" valuestep="1" text="Sky and Cloud Detail">
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="440" y="-300"/>
+               </Anchor>
+            </Anchors>
+            <Attributes>
+               <Attribute name="tooltip_title" type="String" value="SkyCloudLOD" />
+               <Attribute name="tooltip_description" type="String" value="The contrast of sky box clouds. Higher is more contrast." />
+               <Attribute name="cvar_name" type="string" value="SkyCloudLOD" />
+               <Attribute name="label" type="string" value="Sky detail" />
+            </Attributes>
+            <Scripts>
+               <OnLoad>TOUCHYSETTINGS.Slider_OnLoad(self);</OnLoad>
+               <OnValueChanged>TOUCHYSETTINGS.Slider_OnValueChanged(self);</OnValueChanged>
+               <OnEnter>TOUCHYSETTINGS.TooltipEnter(self);</OnEnter>
+               <OnLeave>TOUCHYSETTINGS.TooltipLeave(self);</OnLeave>
+            </Scripts>
+         </Slider>
+ 
+      <!--
+          <EditBox name="$parent_FPSEditBox" letters="4">
+            <Size x="100" y="32" />
+            <Anchors>
+               <Anchor point="TOPLEFT">
+                  <Offset x="350" y="-380" />
+               </Anchor>
+            </Anchors>
+            <Layers>
+               <Layer level="BACKGROUND">
+                  <Texture file="Interface\ChatFrame\UI-ChatInputBorder-Left">
+                     <Size x="75" y="32" />
+                     <Anchors>
+                        <Anchor point="LEFT">
+                           <Offset x="-10" y="0" />
+                        </Anchor>
+                     </Anchors>
+                     <TexCoords left="0" right="0.2" top="0" bottom="1.0"/>
+                  </Texture>
+                  <Texture file="Interface\ChatFrame\UI-ChatInputBorder-Right">
+                     <Size x="75" y="32" />
+                     <Anchors>
+                        <Anchor point="RIGHT">
+                           <Offset x="10" y="0" />
+                        </Anchor>
+                     </Anchors>
+                     <TexCoords left="0.7" right="1.0" top="0" bottom="1.0"/>
+                  </Texture>
+               </Layer>
+            </Layers>
+            <Scripts>
+               <OnLoad></OnLoad>
+            </Scripts>
+            <FontString inherits="ChatFontNormal" />
+         </EditBox>
+      -->
+         
+         <Button name="$parent_ButtonClose" inherits="OptionsButtonTemplate" text="Close">
+            <Anchors>
+               <Anchor point="BOTTOMRIGHT">
+                  <Offset x="-12" y="16"/>
+               </Anchor> 
+            </Anchors>
+            <Scripts>
+               <OnClick>TOUCHYSETTINGS.CloseButton_Click();</OnClick>
+            </Scripts>
+         </Button>
+      
+      </Frames>
+      
+   </Frame>
+
+</Ui>

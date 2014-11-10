@@ -1,0 +1,34 @@
+## Interface: 60000
+## Title: Touchy Settings
+## Note: Access to 'hidden' game settings by typing /ts.
+## Author: Colin S
+## Version: 0.0.5
+
+touchy_settings.xml
+
+# 1. Details about CVar settings can be found here:
+#    http://wowprogramming.com/docs/cvars
+#
+# 2. Features being considered
+#    a) Maximum background frame rate (text box)
+#    b) Maximum foreground frame rate (text box)
+#    c) ColorblindMode (currently broken under 6.0)
+#    d) Viewport Resizing (is that really a feature?)
+#    e) More camera options (which ones are worth having?)
+#    f) More sound options (do these cvars actually work)
+#    g) spell effect emphasis (more options that in the standard ui?)
+#
+# 3. Confirmed "useless": will not be added unless evidence that they
+#    still have any effect can be delivered.
+#    a) HorizonFarClip
+#    b) processAffinity (you'd never want to change this)
+#    c) ffxnether
+#    d) ffxdeath
+#    e) ffxspecial
+#    f) groundeffectfade (same as groundeffectdist)
+#    g) farclip > 1350 seems to have no impact
+#
+# 4. License: MIT
+#
+# 5. For details, see the (unreleased) youtube video at:
+#    http://www.youtube.com/
