@@ -3,8 +3,12 @@
 ## Note: Access to 'hidden' game settings by typing /ts.
 ## Author: Colin S
 ## Version: 0.0.5
+## X-Curse-Packaged-Version: r20141110023348
+## X-Curse-Project-Name: Touchy Settings
+## X-Curse-Project-ID: touchy-settings
+## X-Curse-Repository-ID: wow/touchy-settings/mainline
 
-touchy_settings.xml
+touchy-settings.xml
 
 # 1. Details about CVar settings can be found here:
 #    http://wowprogramming.com/docs/cvars

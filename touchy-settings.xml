@@ -1,5 +1,5 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-   <Script file="touchy_settings.lua" />
+   <Script file="touchy-settings.lua" />
    
    <Frame name="TouchySettingsFrame" parent="UIParent" toplevel="true" enableMouse="true" hidden="true">
       <Size>
@@ -33,7 +33,7 @@
             </Texture>
          </Layer>
          <Layer level="OVERLAY">
-            <FontString name="$parent_Title" parentKey="title" inherits="GameFontNormal" text="All Settings">
+            <FontString name="$parent_Title" parentKey="title" inherits="GameFontNormal" text="Touchy Settings">
                
                <Anchors>
                   <Anchor point="CENTER" relativeTo="$parent_FrameHeader">
