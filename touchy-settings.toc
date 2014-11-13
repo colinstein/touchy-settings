@@ -9,11 +9,20 @@
 ## X-Curse-Repository-ID: wow/touchy-settings/mainline
 
 touchy-settings.xml
-
-# 1. Details about CVar settings can be found here:
+# 1. Project Details
+#    The working repository is on github at: github.com/colinstein/touchy-settings
+#    'release' (alpha, beta, and actual release) versions are pushed to curse as
+#    they are ready. If you have issues to report, do it on github
+#
+# 2. Details about CVar settings can be found here:
 #    http://wowprogramming.com/docs/cvars
 #
-# 2. Features being considered
+# 3. Features that will be added in the next release:
+#    a) SSAOBlur
+#    b) SSAODistance
+#    c) wmoLODDist
+#
+# 4. Features being considered
 #    a) Maximum background frame rate (text box)
 #    b) Maximum foreground frame rate (text box)
 #    c) ColorblindMode (currently broken under 6.0)
@@ -22,8 +31,8 @@ touchy-settings.xml
 #    f) More sound options (do these cvars actually work)
 #    g) spell effect emphasis (more options that in the standard ui?)
 #
-# 3. Confirmed "useless": will not be added unless evidence that they
-#    still have any effect can be delivered.
+# 5. Confirmed "useless": will not be added unless evidence that they
+#    still have any effect beyond the standard in-game options.
 #    a) HorizonFarClip
 #    b) processAffinity (you'd never want to change this)
 #    c) ffxnether
@@ -31,8 +40,14 @@ touchy-settings.xml
 #    e) ffxspecial
 #    f) groundeffectfade (same as groundeffectdist)
 #    g) farclip > 1350 seems to have no impact
+#    h) fog* (dist, near, far, color, etc)
+#    i) HorizonFarClipScale
+#    j) environmentDetail
+#    k) particleDensity
+#    If you think this list is in error, please provide an explanation and I'll
+#    re-evaluate their exclusion.
 #
-# 4. License: MIT
+# 6. License: MIT
 #
-# 5. For details, see the (unreleased) youtube video at:
+# 7. For details, see the (unreleased) youtube video at:
 #    http://www.youtube.com/
