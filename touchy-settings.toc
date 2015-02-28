@@ -1,4 +1,4 @@
-## Interface: 60000
+## Interface: 60100
 ## Title: Touchy Settings
 ## Note: Access to 'hidden' game settings by typing /ts.
 ## Author: Colin S
